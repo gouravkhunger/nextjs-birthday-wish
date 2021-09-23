@@ -10,7 +10,7 @@ Don't forget to ⭐️ this repository!
 
 ## Images
 
-![Happy Birthday Wisher Home Page](https://raw.githubusercontent.com/gouravkhunger/nextjs-birthday-wisher/main/media/image.png)
+![Happy Birthday Wisher Home Page](https://raw.githubusercontent.com/gouravkhunger/nextjs-birthday-wish/main/media/image.png)
 
 ## Local Setup
 
