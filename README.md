@@ -32,6 +32,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
+## Tech Used
+
+<img src="https://ideas.byteridge.com/content/images/size/w2000/2020/08/nextjs-image.jpeg" height="90px" width="150px">  
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
