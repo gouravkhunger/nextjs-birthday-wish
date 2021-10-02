@@ -22,10 +22,11 @@
 
 .desc {
   text-align: center;
+  font-weight: 600;
 }
 
 .desc .span {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .title {
@@ -52,7 +53,7 @@
   width: 80px;
   height: 45px;
   margin-right: 8px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -62,13 +63,13 @@
   border-radius: 45px;
   cursor: pointer;
   outline: none;
-  box-shadow: 0px 5px 20px rgba(0,112,243, 0.4);
+  box-shadow: 0px 5px 20px rgba(0, 112, 243, 0.4);
   background-color: #0070f3;
   color: #fff;
   transition: all 0.3s ease 0s;
 }
 
 .button:hover {
-  box-shadow: 0px 3px 15px rgba(0,112,243, 0.8);
+  box-shadow: 0px 3px 15px rgba(0, 112, 243, 0.8);
   background-color: #0070f3;
 }

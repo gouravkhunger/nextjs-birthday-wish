@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Router from 'next/router'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Router from "next/router";
 
 export default function Home() {
   return (
@@ -19,25 +19,39 @@ export default function Home() {
         </div>
         <div>
           <form className={styles.form} onSubmit={input}>
-            <input name="go" className={styles.input} placeholder="Enter name of the person" />
-            <button className={styles.button} type="submit">Go!</button>
+            <input
+              name="go"
+              className={styles.input}
+              placeholder="Enter name of the person"
+            />
+            <button className={styles.button} type="submit">
+              Go!
+            </button>
           </form>
           <p className={styles.desc}>
-            Crafted by <a className={styles.span} href="https://github.com/gouravkhunger" target="_blank" rel="noreferrer">Gourav</a>.
+            Crafted by{" "}
+            <a
+              className={styles.span}
+              href="https://github.com/gouravkhunger"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Gourav
+            </a>
           </p>
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-const input = event => {
-  event.preventDefault() // don't redirect the page
+const input = (event) => {
+  event.preventDefault(); // don't redirect the page
   // where we'll add our form logic
-  const value = event.target.querySelector('input').value
+  const value = event.target.querySelector("input").value;
   if (!value) {
-    alert("Please enter a name!")
-    return
+    alert("Please enter a name!");
+    return;
   }
-  Router.push(value)
-}
+  Router.push(value);
+};
