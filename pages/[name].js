@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Name.module.css'
 import { useRouter } from 'next/router'
 import ConfettiGenerator from "confetti-js"
+import messages from '../utils/birthdayWishes.js'
 
 const Wish = () => {
 
@@ -19,6 +20,10 @@ const Wish = () => {
 
         return () => confetti.clear();
     }, [])
+    // function for randomly picking the message from messages array
+    const randomNumber = (min , max) => {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 
     return (
         <div className={styles.container}>
@@ -37,6 +42,7 @@ const Wish = () => {
                         Happy Birthday <span className={styles.span}>{name}!</span>
                     </h1>
                 </div>
+                <p className={styles.desc}>{messages[randomNumber(0,messages.length)].value}</p>
                 <div>
                     <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
                     <p className={styles.desc}>
