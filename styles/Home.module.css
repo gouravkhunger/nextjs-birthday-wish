@@ -48,6 +48,14 @@
   font-size: 16px;
 }
 
+.desc {
+  min-width: 18rem;
+  border: none;
+  outline: none;
+  margin: 24px;
+  font-size: 16px;
+}
+
 .button {
   width: 80px;
   height: 45px;

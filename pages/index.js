@@ -19,8 +19,11 @@ export default function Home() {
         </div>
         <div>
           <form className={styles.form} onSubmit={input}>
-            <input name="go" className={styles.input} placeholder="Enter name of the person" />
+            <input name="go" id="input" className={styles.input} placeholder="Enter name of the person" />
             <button className={styles.button} type="submit">Go!</button>
+            <br/>
+            <br/>
+            <input name="desc" id="desc" className={styles.desc} placeholder="Enter custom description (optional)" />
           </form>
           <p className={styles.desc}>
             Crafted by <a className={styles.span} href="https://github.com/gouravkhunger" target="_blank" rel="noreferrer">Gourav</a>.
@@ -34,10 +37,16 @@ export default function Home() {
 const input = event => {
   event.preventDefault() // don't redirect the page
   // where we'll add our form logic
-  const value = event.target.querySelector('input').value
+  const value = event.target.querySelector('#input').value
   if (!value) {
     alert("Please enter a name!")
     return
   }
-  Router.push(value)
+  const desc = event.target.querySelector('#desc').value
+  if(!desc){
+    Router.push(value)
+  }
+  else{
+    Router.push(value+"?msg="+window.btoa(desc))
+  }  
 }

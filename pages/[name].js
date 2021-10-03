@@ -20,9 +20,20 @@ const Wish = () => {
 
         return () => confetti.clear();
     }, [])
-    // function for randomly picking the message from messages array
-    const randomNumber = (min , max) => {
-        return Math.floor(Math.random() * (max - min)) + min;
+
+    // check has params msg in url or not
+    let params = router.query;
+    let msg = ''
+    if(params.msg) {
+        msg = window.atob(params.msg);
+    }
+    else {
+        // function for randomly picking the message from messages array
+        const randomNumber = (min , max) => {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        msg = messages[randomNumber(0,messages.length)].value;
     }
 
     return (
@@ -42,7 +53,7 @@ const Wish = () => {
                         Happy Birthday <span className={styles.span}>{name}!</span>
                     </h1>
                 </div>
-                <p className={styles.desc}>{messages[randomNumber(0,messages.length)].value}</p>
+                <p className={styles.desc}>{msg}</p>
                 <div>
                     <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
                     <p className={styles.desc}>
