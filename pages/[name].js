@@ -12,7 +12,6 @@ const Wish = () => {
     const { name,color } = router.query
     const {setTheme}= useTheme();
 
-    console.log({name,color});
     React.useEffect(() => {
         // Theme Change
         if(color) setTheme(color);
@@ -26,7 +25,7 @@ const Wish = () => {
         confetti.render();
 
         return () => confetti.clear();
-    }, [color])
+    }, [color,setTheme])
 
     return (
         <div className={styles.container}>
