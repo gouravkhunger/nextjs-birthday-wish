@@ -96,8 +96,13 @@
   color: #fff;
   transition: all 0.3s ease 0s;
   margin: auto;
-  display: block;
+  margin-right:5px;
+  display: inline-block;
   margin-top: 80px;
+}
+
+.buttonDiv {
+  text-align: center;
 }
 
 .button:hover {

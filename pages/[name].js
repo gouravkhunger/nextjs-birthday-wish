@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Head from "next/head";
 import styles from "../styles/Name.module.css";
 import { useRouter } from "next/router";
@@ -30,12 +30,16 @@ const Wish = () => {
   
   const router = useRouter();
   const { name } = router.query;
+  const [color, setColor] = useState([]);
+  const [linkTitle, setLinkTitle] = useState([]);
 
   React.useEffect(() => {
     const confettiSettings = {
       target: "canvas",
       start_from_edge: true,
     };
+    setLinkTitle("Copy Link");
+    setColor("#0070f3");
     const confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
 
@@ -44,6 +48,14 @@ const Wish = () => {
   // function for randomly picking the message from messages array
   const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
+  };
+  const copyToClipboard = (e) => {
+    // This is just personal preference.
+    e.preventDefault();
+    navigator.clipboard.writeText(window.location.href);
+    
+    setColor("Green");
+    setLinkTitle("Link Copied");
   };
 
   return (
@@ -65,9 +77,12 @@ const Wish = () => {
         <p className={styles.desc}>
           {messages[randomNumber(0, messages.length)].value}
         </p>
-        <div>
+        <div className={styles.buttonDiv}>
           <button onClick={() => router.push("/")} className={styles.button}>
             &larr; Create a wish
+          </button>
+          <button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.button} >
+            {linkTitle}
           </button>
         </div>
       </main>
