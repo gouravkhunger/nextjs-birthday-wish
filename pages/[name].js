@@ -81,17 +81,17 @@ const Wish = () => {
         <p className={styles.desc}>
           {messages[randomNumber(0, messages.length)].value}
         </p>
-        <div>
-          <button onClick={() => router.push("/")} className={styles.button}>
-            &larr; Create a wish
-          </button>                
-          {buttonVisible && linkTitle === "Copy Link"?<button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.buttonCopy} >
-            {linkTitle}
-          </button>:''}  
-          {buttonVisible  && linkTitle === "Link Copied"?<button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.buttonCopied} >
-            {linkTitle}
-          </button>:''}  
-        </div>
+              <div>
+                  {buttonVisible && linkTitle === "Copy Link" ? <button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.buttonCopy} >
+                      {linkTitle}
+                  </button> : ''}
+                  {buttonVisible && linkTitle === "Link Copied" ? <button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.buttonCopied} >
+                      {linkTitle}
+                  </button> : ''}
+                  <button onClick={() => router.push("/")} className={styles.button}>
+                      &larr; Create a wish
+                  </button>
+              </div>
       </main>
     </div>
   );

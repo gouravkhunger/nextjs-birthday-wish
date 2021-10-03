@@ -97,7 +97,7 @@
   transition: all 0.3s ease 0s;
   margin: auto;
   display: block;
-  margin-top: 80px;
+  margin-top: 1%;
 }
 
 .buttonCopy, .buttonCopied {
@@ -115,7 +115,7 @@
   transition: all 0.3s ease 0s;
   margin: auto;
   display: block;
-  margin-top: 1%
+  margin-top: 80px;
 }
 
 .buttonCopy {
