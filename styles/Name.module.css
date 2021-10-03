@@ -67,7 +67,6 @@
   border-radius: 45px;
   cursor: pointer;
   outline: none;
-
   background-color: var(--color);
   color: #fff;
   transition: all 0.3s ease 0s;

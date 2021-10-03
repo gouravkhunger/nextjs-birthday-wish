@@ -3,13 +3,21 @@ import Head from 'next/head'
 import styles from '../styles/Name.module.css'
 import { useRouter } from 'next/router'
 import ConfettiGenerator from "confetti-js"
+import useTheme from '../hooks/useTheme'
+
+
 
 const Wish = () => {
-
     const router = useRouter()
-    const { name } = router.query
+    const { name,color } = router.query
+    const {setTheme}= useTheme();
 
+    console.log({name,color});
     React.useEffect(() => {
+        // Theme Change
+        if(color) setTheme(color);
+        else setTheme(1);
+        // Confetti
         const confettiSettings = {
             target: 'canvas',
             start_from_edge: true
@@ -18,7 +26,7 @@ const Wish = () => {
         confetti.render();
 
         return () => confetti.clear();
-    }, [])
+    }, [color])
 
     return (
         <div className={styles.container}>

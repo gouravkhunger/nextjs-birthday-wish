@@ -1,18 +1,23 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Router from 'next/router'
-import { useEffect, useState } from 'react';
+import Router from 'next/router';
+import useTheme from '../hooks/useTheme';
 
 export default function Home() {
-  const [color,setColor] = useState('#0070f3');
 
-  const handleThemeChange = event =>{
-    setColor(event.target.value);
+  const {themes, setTheme, currentTheme} = useTheme();
+
+  const handleInput = (e) => {
+    e.preventDefault();
+    const id = currentTheme.id;
+    const value = event.target.querySelector('#input').value
+    if (!value) {
+      alert("Please enter a name!")
+      return
+    }
+    if(currentTheme == 1) Router.push(value) // If the theme is default blue then push to '/{name}'
+    else Router.push(`/${value}?color=${id}`) // If the theme is not default then will push to '/{name}?color={id}
   }
-  
-  useEffect(()=>{
-    changeTheme(color);
-  },[color]);
 
 
   return (
@@ -31,19 +36,13 @@ export default function Home() {
         </div>
         {/* Theme Color  */}
         <div>
-          <form className={styles.theme} id='theme-input' onChange={handleThemeChange}>
-        
-              <input type='radio' id='blue' name='theme' value='#0070f3'/>
-              <input type='radio' id='green' name='theme' value='#10B981'/>
-              <input type='radio' id='violet' name='theme' value='#8B5CF6'/>
-              <input type='radio' id='yellow' name='theme' value='#FBBF24'/>
-              <input type='radio' id='red' name='theme' value='#E11D48'/>
-         
+          <form className={styles.theme} id='theme-input' onChange={(e)=>setTheme(e.target.id)}>
+              {themes.map(item => (<input key={item.id} type='radio' className={item.name} id={item.id} name='theme' value={item.color} />))}      
           </form>
         </div>
         <div>
-          <form className={styles.form} onSubmit={input}>
-            <input name="go" className={styles.input} placeholder="Enter name of the person" />
+          <form className={styles.form} onSubmit={handleInput}>
+            <input id='input' name="go" className={styles.input} placeholder="Enter name of the person" />
             <button className={styles.button} type="submit">Go!</button>
           </form>
           <p className={styles.desc}>
@@ -55,18 +54,3 @@ export default function Home() {
   )
 }
 
-const input = event => {
-  event.preventDefault() // don't redirect the page
-  // where we'll add our form logic
-  const value = event.target.querySelector('input').value
-  if (!value) {
-    alert("Please enter a name!")
-    return
-  }
-  Router.push(value)
-}
-
-const changeTheme = color => {
-  let root = document.documentElement;
-  root.style.setProperty('--color',color);
-}

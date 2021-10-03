@@ -54,25 +54,29 @@ input[type='radio']:after {
   opacity: 80%;
 }
 
-input[type='radio']#blue:after{
+input[type='radio'].blue:after{
   background-color: var(--blue);
+  box-shadow: 0px 3px 10px  var(--blue);
 
 }
-input[type='radio']#green:after{
+input[type='radio'].green:after{
   background-color: var(--green);
-
+  box-shadow: 0px 3px 10px  var(--green);
 }
 
-input[type='radio']#violet:after{
+input[type='radio'].violet:after{
   background-color: var(--violet);
+  box-shadow: 0px 3px 10px  var(--violet);
 }
 
-input[type='radio']#yellow:after{
+input[type='radio'].yellow:after{
   background-color: var(--yellow);
+  box-shadow: 0px 3px 10px  var(--yellow);
 }
 
-input[type='radio']#red:after{
+input[type='radio'].red:after{
   background-color: var(--red);
+  box-shadow: 0px 3px 10px  var(--red);
 }
 
 
@@ -93,28 +97,28 @@ input[type='radio']:checked:after {
   box-shadow: 0px 5px 20px -3px var(--color);
 }
 
-input[type='radio']#blue:checked:after{
+input[type='radio'].blue:checked:after{
   background-color: var(--blue);
   outline: 2px solid var(--blue);
   
 
 }
-input[type='radio']#green:checked:after{
+input[type='radio'].green:checked:after{
   background-color: var(--green);
   outline: 2px solid var(--green);
 }
 
-input[type='radio']#violet:checked:after{
+input[type='radio'].violet:checked:after{
   background-color: var(--violet);
   outline: 2px solid var(--violet);
 }
 
-input[type='radio']#yellow:checked:after{
+input[type='radio'].yellow:checked:after{
   background-color: var(--yellow);
   outline: 2px solid var(--yellow);
 }
 
-input[type='radio']#red:checked:after{
+input[type='radio'].red:checked:after{
   background-color: var(--red);
   outline: 2px solid var(--red);
 }
