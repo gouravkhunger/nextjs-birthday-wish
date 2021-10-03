@@ -76,6 +76,6 @@
 }
 
 .button:hover {
-  box-shadow: 0px 3px 15px rgba(0,112,243, 0.8);
+  box-shadow: 0px 3px 20px var(--color);
   background-color: var(--color);
 }
