@@ -13,10 +13,10 @@
 }
 
 @keyframes zoom {
-  0%{
-   transform: scale(0);
+  0% {
+    transform: scale(0);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
@@ -52,15 +52,36 @@
   line-height: 1.15;
   font-size: 3rem;
   text-align: center;
-  display : block;
+  display: block;
 }
 
+/* Added animation on the title */
+.title span {
+  display: inline-block;
+  white-space: pre;
+  animation: wavyText 1.5s ease-in-out 2s infinite;
+  animation-delay: calc(((1.5s / var(--wish-length)) * var(--i)) + 2s);
+}
 
+@keyframes wavyText {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ---------------------------- */
 
 .button {
   padding: 16px;
   height: 45px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -70,16 +91,16 @@
   border-radius: 45px;
   cursor: pointer;
   outline: none;
-  box-shadow: 0px 5px 20px rgba(0,112,243, 0.4);
+  box-shadow: 0px 5px 20px rgba(0, 112, 243, 0.4);
   background-color: #0070f3;
   color: #fff;
   transition: all 0.3s ease 0s;
-  margin:auto;
-  display:block;
+  margin: auto;
+  display: block;
   margin-top: 80px;
 }
 
 .button:hover {
-  box-shadow: 0px 3px 15px rgba(0,112,243, 0.8);
+  box-shadow: 0px 3px 15px rgba(0, 112, 243, 0.8);
   background-color: #0070f3;
 }

@@ -2,7 +2,7 @@
 
 Check out the [Live Website](https://hbdwish.ml)
 
-This is a simple [Next.js](https://nextjs.org/) project where you can generate a birthday wish for someone. 
+This is a simple [Next.js](https://nextjs.org/) project where you can generate a birthday wish for someone.
 
 Just enter their name, press Go and share them the generated link :)
 
@@ -40,6 +40,10 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Credits
+
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 ## License
 
