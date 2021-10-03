@@ -36,7 +36,7 @@
 }
 
 .span {
-  color: #0070f3;
+  color: var(--color);
 }
 
 .desc {
@@ -67,8 +67,8 @@
   border-radius: 45px;
   cursor: pointer;
   outline: none;
-  box-shadow: 0px 5px 20px rgba(0,112,243, 0.4);
-  background-color: #0070f3;
+
+  background-color: var(--color);
   color: #fff;
   transition: all 0.3s ease 0s;
   margin:auto;
@@ -77,5 +77,5 @@
 
 .button:hover {
   box-shadow: 0px 3px 15px rgba(0,112,243, 0.8);
-  background-color: #0070f3;
+  background-color: var(--color);
 }

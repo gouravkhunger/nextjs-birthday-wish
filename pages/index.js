@@ -1,8 +1,20 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Router from 'next/router'
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [color,setColor] = useState('#0070f3');
+
+  const handleThemeChange = event =>{
+    setColor(event.target.value);
+  }
+  
+  useEffect(()=>{
+    changeTheme(color);
+  },[color]);
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +28,18 @@ export default function Home() {
           <h1 className={styles.title}>
             Create a <span className={styles.span}>Birthday</span> Wish
           </h1>
+        </div>
+        {/* Theme Color  */}
+        <div>
+          <form className={styles.theme} id='theme-input' onChange={handleThemeChange}>
+        
+              <input type='radio' id='blue' name='theme' value='#0070f3'/>
+              <input type='radio' id='green' name='theme' value='#10B981'/>
+              <input type='radio' id='violet' name='theme' value='#8B5CF6'/>
+              <input type='radio' id='yellow' name='theme' value='#FBBF24'/>
+              <input type='radio' id='red' name='theme' value='#E11D48'/>
+         
+          </form>
         </div>
         <div>
           <form className={styles.form} onSubmit={input}>
@@ -40,4 +64,9 @@ const input = event => {
     return
   }
   Router.push(value)
+}
+
+const changeTheme = color => {
+  let root = document.documentElement;
+  root.style.setProperty('--color',color);
 }
