@@ -25,7 +25,7 @@ const Wish = () => {
         confetti.render();
 
         return () => confetti.clear();
-    }, [color,setTheme])
+    }, [color])
 
     return (
         <div className={styles.container}>
