@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Head from 'next/head'
 import styles from '../styles/Name.module.css'
 import { useRouter } from 'next/router'
@@ -9,18 +9,18 @@ const title = (name) => {
 
     const wish = 'Happy Birthday ' + name + "!"
     const letters = []
-    
+
     for (let i = 0; i < wish.length; i++) {
         const letter = wish.charAt(i)
 
-        if(i > 14)
-            letters.push(<span key={i} style={{"--i": i + 1}} className={styles.span}>{letter}</span>)
+        if (i > 14)
+            letters.push(<span key={i} style={{ "--i": i + 1 }} className={styles.span}>{letter}</span>)
         else
-            letters.push(<span key={i} style={{"--i": i + 1}}>{letter}</span>)
+            letters.push(<span key={i} style={{ "--i": i + 1 }}>{letter}</span>)
     }
 
     return (
-        <h1 className={styles.title} style={{"--wish-length": wish.length}}>
+        <h1 className={styles.title} style={{ "--wish-length": wish.length }}>
             {letters.map((letter) => letter)}
         </h1>
     )
@@ -30,6 +30,8 @@ const Wish = () => {
 
     const router = useRouter()
     const { name } = router.query
+    const [color, setColor] = useState([]);
+    const [linkTitle, setLinkTitle] = useState([]);
 
     React.useEffect(() => {
         const confettiSettings = {
@@ -38,13 +40,23 @@ const Wish = () => {
         };
         const confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
+        setLinkTitle("Copy Link");
+        setColor("#0070f3");
 
         return () => confetti.clear();
     }, [])
     // function for randomly picking the message from messages array
-    const randomNumber = (min , max) => {
+    const randomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min)) + min;
     }
+
+    function copyToClipboard(e) {
+        // This is just personal preference.
+        navigator.clipboard.writeText(window.location.href);
+        e.target.focus();
+        setColor("Green");
+        setLinkTitle("Link Copied");
+    };
 
     return (
         <div className={styles.container}>
@@ -61,9 +73,10 @@ const Wish = () => {
                 <div className={styles.main}>
                     {title(name)}
                 </div>
-                <p className={styles.desc}>{messages[randomNumber(0,messages.length)].value}</p>
-                <div>
+                <p className={styles.desc}>{messages[randomNumber(0, messages.length)].value}</p>
+                <div className={styles.buttonDiv}>
                     <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
+                    <button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.button} >{linkTitle}</button>
                     <p className={styles.desc}>
                         Crafted by <a className={styles.span} href="https://github.com/gouravkhunger" target="_blank" rel="noreferrer">Gourav</a>.
                     </p>
