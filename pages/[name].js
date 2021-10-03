@@ -27,11 +27,13 @@ const title = (name) => {
 }
 
 const Wish = () => {
-  
+
   const router = useRouter();
   const { name } = router.query;
   const [color, setColor] = useState([]);
   const [linkTitle, setLinkTitle] = useState([]);
+  // In future work (button visible will be depends on routes).
+  const [buttonVisible, setButtonVisible] = useState([]);
 
   React.useEffect(() => {
     const confettiSettings = {
@@ -40,6 +42,7 @@ const Wish = () => {
     };
     setLinkTitle("Copy Link");
     setColor("#0070f3");
+    setButtonVisible(true);
     const confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
 
@@ -53,9 +56,10 @@ const Wish = () => {
     // This is just personal preference.
     e.preventDefault();
     navigator.clipboard.writeText(window.location.href);
-    
-    setColor("Green");
+
+    setColor("#10B981");
     setLinkTitle("Link Copied");
+    setButtonVisible(true);
   };
 
   return (
@@ -77,13 +81,16 @@ const Wish = () => {
         <p className={styles.desc}>
           {messages[randomNumber(0, messages.length)].value}
         </p>
-        <div className={styles.buttonDiv}>
+        <div>
           <button onClick={() => router.push("/")} className={styles.button}>
             &larr; Create a wish
-          </button>
-          <button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.button} >
+          </button>                
+          {buttonVisible && linkTitle === "Copy Link"?<button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.buttonCopy} >
             {linkTitle}
-          </button>
+          </button>:''}  
+          {buttonVisible  && linkTitle === "Link Copied"?<button style={{ backgroundColor: color }} onClick={copyToClipboard} className={styles.buttonCopied} >
+            {linkTitle}
+          </button>:''}  
         </div>
       </main>
     </div>
