@@ -5,6 +5,27 @@ import { useRouter } from 'next/router'
 import ConfettiGenerator from "confetti-js"
 import messages from '../utils/birthdayWishes.js'
 
+const title = (name) => {
+
+    const wish = 'Happy Birthday ' + name + "!"
+    const letters = []
+    
+    for (let i = 0; i < wish.length; i++) {
+        const letter = wish.charAt(i)
+
+        if(i > 14)
+            letters.push(<span key={i} style={{"--i": i + 1}} className={styles.span}>{letter}</span>)
+        else
+            letters.push(<span key={i} style={{"--i": i + 1}}>{letter}</span>)
+    }
+
+    return (
+        <h1 className={styles.title} style={{"--wish-length": wish.length}}>
+            {letters.map((letter) => letter)}
+        </h1>
+    )
+}
+
 const Wish = () => {
 
     const router = useRouter()
@@ -38,9 +59,7 @@ const Wish = () => {
 
             <main className={styles.animate}>
                 <div className={styles.main}>
-                    <h1 className={styles.title}>
-                        Happy Birthday <span className={styles.span}>{name}!</span>
-                    </h1>
+                    {title(name)}
                 </div>
                 <p className={styles.desc}>{messages[randomNumber(0,messages.length)].value}</p>
                 <div>
