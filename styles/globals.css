@@ -90,11 +90,13 @@ input[type='radio']:checked:after {
   visibility: visible;
   border: 2.5px solid white;
   opacity: 100%;
+  box-shadow: 0px 5px 20px -3px var(--color);
 }
 
 input[type='radio']#blue:checked:after{
   background-color: var(--blue);
   outline: 2px solid var(--blue);
+  
 
 }
 input[type='radio']#green:checked:after{
