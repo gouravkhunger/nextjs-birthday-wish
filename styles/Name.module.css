@@ -60,7 +60,7 @@
   display: inline-block;
   white-space: pre;
   animation: wavyText 1.5s ease-in-out 2s infinite;
-  animation-delay: calc((1.5s / var(--wish-length)) * var(--i));
+  animation-delay: calc(((1.5s / var(--wish-length)) * var(--i)) + 2s);
 }
 
 @keyframes wavyText {
