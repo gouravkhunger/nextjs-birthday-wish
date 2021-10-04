@@ -83,9 +83,10 @@
   padding-bottom: 3rem;
 }
 
-/* If a screen is 350px or less wide, the button is in the middle*/
-@media screen and (max-width: 350px) {
+ /* If a screen is 350px or less wide, the button is in the middle*/
+ @media screen and (max-width: 350px) {
   .button {
-    margin-left: 36%;
+    display: block;
+    margin: auto;
   }
 }
