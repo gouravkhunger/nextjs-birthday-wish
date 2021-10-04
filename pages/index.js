@@ -10,13 +10,13 @@ export default function Home() {
   const handleInput = (e) => {
     e.preventDefault();
     const id = currentTheme.id;
-    const value = event.target.querySelector('#input').value
+    const value = e.target.querySelector('#input').value
     if (!value) {
       alert("Please enter a name!")
       return
     }
     if(currentTheme == 1) Router.push(value) // If the theme is default blue then push to '/{name}'
-    else Router.push(`/${value}?color=${id}`) // If the theme is not default then will push to '/{name}?color={id}
+    else Router.push(`/${value}/${id}`) // If the theme is not default then will push to '/{name}?color={id}
   }
 
 
