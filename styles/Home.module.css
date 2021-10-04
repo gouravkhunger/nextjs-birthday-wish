@@ -82,3 +82,11 @@
   justify-content: center;
   padding-bottom: 3rem;
 }
+
+ /* If a screen is 350px or less wide, the button is in the middle*/
+ @media screen and (max-width: 350px) {
+  .button {
+    display: block;
+    margin: auto;
+  }
+}
