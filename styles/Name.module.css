@@ -78,6 +78,13 @@
 
 /* ---------------------------- */
 
+.buttonContainer {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
 .button {
   padding: 16px;
   height: 45px;
@@ -86,7 +93,6 @@
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  background-color: #fff;
   border: none;
   border-radius: 45px;
   cursor: pointer;
@@ -97,7 +103,6 @@
   transition: all 0.3s ease 0s;
   margin: auto;
   display: block;
-  margin-top: 80px;
 }
 
 .button:hover {

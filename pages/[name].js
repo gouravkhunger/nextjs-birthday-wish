@@ -4,6 +4,7 @@ import styles from '../styles/Name.module.css'
 import { useRouter } from 'next/router'
 import ConfettiGenerator from "confetti-js"
 import messages from '../utils/birthdayWishes.js'
+import CopyLinkButton from '../components/CopyLinkButton'
 
 const title = (name) => {
 
@@ -62,7 +63,8 @@ const Wish = () => {
                     {title(name)}
                 </div>
                 <p className={styles.desc}>{messages[randomNumber(0,messages.length)].value}</p>
-                <div>
+                <div className={styles.buttonContainer}>
+                    <CopyLinkButton />
                     <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
                     <p className={styles.desc}>
                         Crafted by <a className={styles.span} href="https://github.com/gouravkhunger" target="_blank" rel="noreferrer">Gourav</a>.
