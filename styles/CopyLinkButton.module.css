@@ -1,0 +1,35 @@
+.button {
+  padding: 16px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  transition: box-shadow 0.3s ease 0s;
+  margin: auto;
+  display: block;
+}
+
+.inactive {
+  box-shadow: 0px 5px 10px -3px var(--color);
+  background-color: var(--color);
+}
+
+.inactive:hover {
+  box-shadow: 0px 3px 12px var(--color);
+}
+
+.active {
+  box-shadow: 0px 5px 10px -3px #10b981;
+  background-color: #10b981;
+}
+
+.active:hover {
+  box-shadow: 0px 3px 12px #10b981;
+}
