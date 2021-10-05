@@ -64,15 +64,14 @@
   border-radius: 45px;
   cursor: pointer;
   outline: none;
-  box-shadow: 0px 5px 20px -3px var(--color);
+  box-shadow: 0px 5px 10px -3px var(--color);
   background-color: var(--color);
   color: #fff;
   transition: all 0.3s ease 0s;
 }
 
 .button:hover {
-  box-shadow: 0px 3px 20px var(--color);
-  background-color: var(--color);
+  box-shadow: 0px 3px 12px var(--color);
 }
 
 .theme{

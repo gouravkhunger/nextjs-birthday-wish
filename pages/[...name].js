@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import ConfettiGenerator from "confetti-js";
 import messages from "../utils/birthdayWishes.js";
 import useTheme from '../hooks/useTheme'
+import CopyLinkButton from '../components/CopyLinkButton'
 
 const title = (name) => {
 
@@ -27,7 +28,7 @@ const title = (name) => {
   )
 }
 
-const Wish = () => {
+const Wish = ({ history }) => {
 
   const router = useRouter();
   const { name } = router.query; // gets both name & color id in form of array [name,colorId]
@@ -65,17 +66,14 @@ const Wish = () => {
 
       <main className={styles.animate}>
         <div className={styles.main}>
-          <h1 className={styles.title}>
-            {title(name && name[0])}
-          </h1>
+          {title(name && name[0])}
         </div>
         <p className={styles.desc}>
           {messages[randomNumber(0, messages.length)].value}
         </p>
-        <div>
-          <button onClick={() => router.push("/")} className={styles.button}>
-            &larr; Create a wish
-          </button>
+        <div className={styles.buttonContainer}>
+          {history[0] == "/" ? <CopyLinkButton /> : ""}
+          <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
         </div>
       </main>
     </div>
