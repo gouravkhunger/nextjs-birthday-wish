@@ -27,7 +27,7 @@ const title = (name) => {
     )
 }
 
-const Wish = () => {
+const Wish = ({ history }) => {
 
     const router = useRouter()
     const { name } = router.query
@@ -64,7 +64,7 @@ const Wish = () => {
                 </div>
                 <p className={styles.desc}>{messages[randomNumber(0,messages.length)].value}</p>
                 <div className={styles.buttonContainer}>
-                    <CopyLinkButton />
+                    { history[0] == "/" ? <CopyLinkButton /> : "" }
                     <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
                     <p className={styles.desc}>
                         Crafted by <a className={styles.span} href="https://github.com/gouravkhunger" target="_blank" rel="noreferrer">Gourav</a>.
