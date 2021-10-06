@@ -16,16 +16,20 @@ Don't forget to ⭐️ this repository!
 
 First, clone this repository:
 
-```
+```bash
 git clone https://github.com/gouravkhunger/nextjs-birthday-wisher
+```
+
+Install the dependencies:
+
+```bash
+npm install
 ```
 
 Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -40,6 +44,23 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Special Thanks
+
+I would like to show my sincere gratitude to these amazing people for making this simple project a big deal. 
+
+Without their contributions, this project wouldn't be as good as it is right now.
+
+- [@PhattOZ](https://github.com/PhattOZ)
+    Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=PhattOZ): Super awesome copy wish link, wavy animation, style fixes.
+
+- [@adarshzpatel](https://github.com/adarshzpatel)
+    Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=adarshzpatel): Multicolour theme.
+
+- [@Sejal-16](https://github.com/Sejal-16)
+    Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=Sejal-16): Birthday quotes idea.
+
+Checkout [all the contributors](https://github.com/gouravkhunger/nextjs-birthday-wish/graphs/contributors).
 
 ## Credits
 

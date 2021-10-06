@@ -74,7 +74,18 @@ export default function Home() {
               rel="noreferrer"
             >
               Gourav
-            </a>
+            </a>.
+          </p>
+          <p className={styles.desc}>
+            Thanks to all the{" "}
+            <a
+              className={styles.span}
+              href="https://github.com/gouravkhunger/nextjs-birthday-wish/graphs/contributors"
+              target="_blank"
+              rel="noreferrer"
+            >
+              contributors
+            </a>!
           </p>
         </div>
       </main>
