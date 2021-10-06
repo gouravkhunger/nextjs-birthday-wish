@@ -52,11 +52,18 @@
   line-height: 1.15;
   font-size: 3rem;
   text-align: center;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.3em;
 }
 
 /* Added animation on the title */
-.title span {
+.title div {
+  flex-shrink: 0;
+}
+
+.title div span {
   display: inline-block;
   white-space: pre;
   animation: wavyText 1.5s ease-in-out 2s infinite;
