@@ -4,24 +4,29 @@ import styles from "../styles/Name.module.css";
 import { useRouter } from "next/router";
 import ConfettiGenerator from "confetti-js";
 import messages from "../utils/birthdayWishes.js";
-import useTheme from '../hooks/useTheme'
-import CopyLinkButton from '../components/CopyLinkButton'
+import useTheme from "../hooks/useTheme";
+import CopyLinkButton from "../components/CopyLinkButton";
 
 const title = (name) => {
-
-  const wish = 'Happy Birthday ' + name + "!"
-  const base_letters = []
-  const name_letters = []
+  const wish = "Happy Birthday " + name + "!";
+  const base_letters = [];
+  const name_letters = [];
 
   for (let i = 0; i < wish.length; i++) {
-    
     if (i < 15) {
-      const letter = wish.charAt(i)
-      base_letters.push(<span key={i} style={{ "--i": i + 1 }}>{letter}</span>)
-    }
-    else {
-      const letter = wish.charAt(i)
-      name_letters.push(<span key={i} style={{ "--i": i + 1 }} className={styles.span}>{letter}</span>)
+      const letter = wish.charAt(i);
+      base_letters.push(
+        <span key={i} style={{ "--i": i + 1 }}>
+          {letter}
+        </span>
+      );
+    } else {
+      const letter = wish.charAt(i);
+      name_letters.push(
+        <span key={i} style={{ "--i": i + 1 }} className={styles.span}>
+          {letter}
+        </span>
+      );
     }
   }
 
@@ -30,13 +35,12 @@ const title = (name) => {
       <div>{base_letters.map((letter) => letter)}</div>
       <div>{name_letters.map((letter) => letter)}</div>
     </h1>
-  )
-}
+  );
+};
 
 const Wish = ({ history }) => {
-
   const router = useRouter();
-  const { name } = router.query;    // gets both name & color id in form of array [name,colorId]
+  const { name } = router.query; // gets both name & color id in form of array [name,colorId]
   const color = name ? name[1] : 0; //extracting colorId from name
 
   const { setTheme } = useTheme();
@@ -70,15 +74,15 @@ const Wish = ({ history }) => {
       <canvas className={styles.canvas} id="canvas"></canvas>
 
       <main className={styles.animate}>
-        <div className={styles.main}>
-          {title(name && name[0])}
-        </div>
+        <div className={styles.main}>{title(name && name[0])}</div>
         <p className={styles.desc}>
           {messages[randomNumber(0, messages.length)].value}
         </p>
         <div className={styles.buttonContainer}>
           {history[0] == "/" ? <CopyLinkButton /> : ""}
-          <button onClick={() => router.push('/')} className={styles.button}>&larr; Create a wish</button>
+          <button onClick={() => router.push("/")} className={styles.button}>
+            &larr; Create a wish
+          </button>
         </div>
       </main>
     </div>

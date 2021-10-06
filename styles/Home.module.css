@@ -1,4 +1,3 @@
-
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
@@ -40,6 +39,10 @@
 .form {
   border-radius: 45px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .input {
@@ -54,6 +57,7 @@
   width: 80px;
   height: 45px;
   margin-right: 8px;
+
   font-family: "Roboto", sans-serif;
   font-size: 11px;
   text-transform: uppercase;
@@ -74,7 +78,7 @@
   box-shadow: 0px 3px 12px var(--color);
 }
 
-.theme{
+.theme {
   display: flex;
   gap: 1rem;
   width: 100%;
@@ -82,8 +86,8 @@
   padding-bottom: 3rem;
 }
 
- /* If a screen is 350px or less wide, the button is in the middle*/
- @media screen and (max-width: 350px) {
+/* If a screen is 350px or less wide, the button is in the middle*/
+@media screen and (max-width: 350px) {
   .button {
     display: block;
     margin: auto;
