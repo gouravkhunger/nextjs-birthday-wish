@@ -1,6 +1,6 @@
 # Happy Birthday Wisher
 
-Check out the [Live Website](https://hbdwish.ml)
+Check out the [Live Website](https://hbdwish.ml).
 
 This is a simple [Next.js](https://nextjs.org/) project where you can generate a birthday wish for someone.
 
@@ -10,7 +10,7 @@ Don't forget to ⭐️ this repository!
 
 ## Images
 
-![Happy Birthday Wisher Home Page](https://raw.githubusercontent.com/gouravkhunger/nextjs-birthday-wish/main/media/image.png)
+![Happy Birthday Wisher Home Page](https://user-images.githubusercontent.com/46792249/136275729-454a4475-18fc-4b41-af98-dbf781778b9e.png)
 
 ## Local Setup
 
@@ -51,20 +51,20 @@ I would like to show my sincere gratitude to these amazing people for making thi
 
 Without their contributions, this project wouldn't be as good as it is right now.
 
-- [@PhattOZ](https://github.com/PhattOZ)
+- [@PhattOZ](https://github.com/PhattOZ) <br />
     Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=PhattOZ): Super awesome copy wish link, wavy animation, style fixes.
 
-- [@adarshzpatel](https://github.com/adarshzpatel)
+- [@adarshzpatel](https://github.com/adarshzpatel) <br />
     Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=adarshzpatel): Multicolour theme.
 
-- [@Sejal-16](https://github.com/Sejal-16)
+- [@Sejal-16](https://github.com/Sejal-16) <br />
     Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=Sejal-16): Birthday quotes idea.
 
 Checkout [all the contributors](https://github.com/gouravkhunger/nextjs-birthday-wish/graphs/contributors).
 
 ## Credits
 
-<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Favicon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.</div>
 
 ## License
 
