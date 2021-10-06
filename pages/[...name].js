@@ -10,20 +10,25 @@ import CopyLinkButton from '../components/CopyLinkButton'
 const title = (name) => {
 
   const wish = 'Happy Birthday ' + name + "!"
-  const letters = []
+  const base_letters = []
+  const name_letters = []
 
   for (let i = 0; i < wish.length; i++) {
-    const letter = wish.charAt(i)
-
-    if (i > 14)
-      letters.push(<span key={i} style={{ "--i": i + 1 }} className={styles.span}>{letter}</span>)
-    else
-      letters.push(<span key={i} style={{ "--i": i + 1 }}>{letter}</span>)
+    
+    if (i < 15) {
+      const letter = wish.charAt(i)
+      base_letters.push(<span key={i} style={{ "--i": i + 1 }}>{letter}</span>)
+    }
+    else {
+      const letter = wish.charAt(i)
+      name_letters.push(<span key={i} style={{ "--i": i + 1 }} className={styles.span}>{letter}</span>)
+    }
   }
 
   return (
     <h1 className={styles.title} style={{ "--wish-length": wish.length }}>
-      {letters.map((letter) => letter)}
+      <div>{base_letters.map((letter) => letter)}</div>
+      <div>{name_letters.map((letter) => letter)}</div>
     </h1>
   )
 }
@@ -31,8 +36,8 @@ const title = (name) => {
 const Wish = ({ history }) => {
 
   const router = useRouter();
-  const { name } = router.query; // gets both name & color id in form of array [name,colorId]
-  const color = name ? name[1] : 0;//extracting colorId from name
+  const { name } = router.query;    // gets both name & color id in form of array [name,colorId]
+  const color = name ? name[1] : 0; //extracting colorId from name
 
   const { setTheme } = useTheme();
 
