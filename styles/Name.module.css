@@ -73,8 +73,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .title div span {

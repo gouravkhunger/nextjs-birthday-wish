@@ -78,12 +78,21 @@
   box-shadow: 0px 3px 12px var(--color);
 }
 
+.themeWrapper {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
 .theme {
+  position: absolute;
   display: flex;
   gap: 1rem;
   width: 100%;
   justify-content: center;
-  padding-bottom: 3rem;
+}
+
+.theme input {
+  cursor: pointer;
 }
 
 /* If a screen is 350px or less wide, the button is in the middle*/

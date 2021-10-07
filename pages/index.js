@@ -34,7 +34,7 @@ export default function Home() {
           </h1>
         </div>
         {/* Theme Color  */}
-        <div>
+        <div className={styles.themeWrapper}>
           <form
             className={styles.theme}
             id="theme-input"
@@ -74,7 +74,8 @@ export default function Home() {
               rel="noreferrer"
             >
               Gourav
-            </a>.
+            </a>
+            .
           </p>
           <p className={styles.desc}>
             Thanks to all the{" "}
@@ -85,7 +86,8 @@ export default function Home() {
               rel="noreferrer"
             >
               contributors
-            </a>!
+            </a>
+            !
           </p>
         </div>
       </main>
