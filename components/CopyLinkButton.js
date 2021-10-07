@@ -9,7 +9,6 @@ const CopyLinkButton = () => {
     if (active) {
       const id = setInterval(() => {
         setTimer((t) => {
-          console.log(t);
           if (t < 1) {
             setActive(false);
           } else {
