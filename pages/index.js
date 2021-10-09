@@ -2,15 +2,17 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Router from "next/router";
 import useTheme from "../hooks/useTheme";
+import { useState } from "react";
 
 export default function Home() {
   const { themes, setTheme, currentTheme } = useTheme();
+  const [value, setValue] = useState("");
 
   const handleInput = (e) => {
     e.preventDefault();
     const id = currentTheme.id;
-    const value = e.target.querySelector("#input").value;
-    if (!value) {
+
+    if (!value || value[0] === " ") {
       alert("Please enter a name!");
       return;
     }
@@ -60,6 +62,8 @@ export default function Home() {
               name="go"
               className={styles.input}
               placeholder="Enter name of the person"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
             <button className={styles.button} type="submit">
               Go!

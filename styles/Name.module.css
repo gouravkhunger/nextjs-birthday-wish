@@ -7,6 +7,16 @@
   align-items: center;
 }
 
+.containerImg {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../public/confetti.png");
+}
+
 .animate {
   animation: zoom 2s ease-in-out;
   padding: 30px;
@@ -49,7 +59,6 @@
 
 .title {
   font-size: 2.5rem;
-
   margin: 0;
   line-height: 1.15;
   text-align: center;
@@ -80,6 +89,53 @@
   white-space: pre;
   animation: wavyText 1.5s ease-in-out 2s infinite;
   animation-delay: calc(((1.5s / var(--wish-length)) * var(--i)) + 2s);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1.15;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.3em;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .titleImg {
+    font-size: 3rem;
+  }
+}
+
+.titleImg {
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 1.15;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.3em;
+}
+
+/* Added animation on the title */
+.titleImg div {
+  flex-shrink: 0;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.titleImg div span {
+  display: inline-block;
+  white-space: pre;
 }
 
 @keyframes wavyText {
