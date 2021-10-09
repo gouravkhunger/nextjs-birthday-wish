@@ -109,7 +109,10 @@ const Wish = ({ history }) => {
         <main className={styles.image}>
           <div>
             <div className={styles.main}>{title(name && name[0])}</div>
-            <p className={styles.desc}>
+
+            <div style={{ height: 40 }} />
+
+            <p className={styles.descImg}>
               {messages[randomNumber(0, messages.length)].value}
             </p>
           </div>
