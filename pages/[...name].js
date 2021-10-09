@@ -141,17 +141,23 @@ const Wish = ({ history }) => {
 
         <div className={styles.buttonContainer}>
           {history[0] == "/" ? <CopyLinkButton /> : ""}
+
+          {history[0] == "/" ? (
+            <button
+              className={styles.button}
+              onClick={() => {
+                setDownloadedOnce(false);
+                setDownloading(true);
+              }}
+            >
+              Download as Image
+            </button>
+          ) : (
+            ""
+          )}
+
           <button onClick={() => router.push("/")} className={styles.button}>
             &larr; Create a wish
-          </button>
-          <button
-            className={styles.button}
-            onClick={() => {
-              setDownloadedOnce(false);
-              setDownloading(true);
-            }}
-          >
-            Download as Image
           </button>
         </div>
       </main>
