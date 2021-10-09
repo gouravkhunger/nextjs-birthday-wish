@@ -27,6 +27,23 @@
     {"value":"Birthdays only come once a year, and your friendship only comes once a lifetime."},
     {"value":"You deserve all the cake, happiness, and love today. Happy birthday!"},
     {"value":"Thank you for being the brightest person I know. Hope to see you shine for years on! Happy birthday!"},
+    {"value":"May your birthday be sprinkled with fun and laughter. Have a great day!"},
+    {"value":"Happy Birthday! I hope you have a great day today, and the year ahead is full of many blessings"},
+    {"value":"Wishing you a very happy birthday! May all your dreams come true."},
+    {"value":"Congratulations on your birthday! Sending you our love and good wishes."},
+    {"value":"Many happy returns to you on your birthday! We hope you have a wonderful day full of friends, family, and cake!"},
+    {"value":"On the bright side, at least you don't have to share your birthday cake with anyone else this year!"},
+    {"value":"I can't wait to be less than 6 feet away from you! Happy birthday!"},
+    {"value":"Sending lots of love and a big virus-free hug on your birthday. I miss you enormously, and I can't wait to take you out to party properly once lockdown is over!!"},
+    {"value":"Keep Calm and Stay Safe... and have a very Happy Birthday!"},
+    {"value":"Those aren't gray hairs that you see. They're strands of birthday glitter growing out of your head."},
+    {"value":"You're not getting older... just more distinguished! Happy Birthday."},
+    {"value":"I spent 3 hours searching the internet for the perfect birthday message for you and then I gave up. Happy Birthday."},
+    {"value":" To many more years of friendship and fun. Happy, happy birthday!"},
+    {"value":" I couldn’t imagine a better friend. Thanks for all the memories! Happy birthday!"},
+    {"value":"I’m so glad to be able to celebrate this day with a special friend. Happy birthday!"},
+    {"value":"Happy birthday! May your day be filled with lots of love and happiness."},
+    {"value":"You’re older than yesterday, but younger than tomorrow! Happy birthday!!"},
 
 ]
 
