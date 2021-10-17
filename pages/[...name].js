@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 import ConfettiGenerator from "confetti-js";
 import messages from "../utils/birthdayWishes.js";
 import useTheme from "../hooks/useTheme";
-import CopyLinkButton from "../components/CopyLinkButton";
 import * as htmlToImage from "html-to-image";
 import FileSaver from "file-saver";
+import { Button, CopyLinkButton } from "../components";
 
 const Wish = ({ history }) => {
   const router = useRouter();
@@ -143,22 +143,21 @@ const Wish = ({ history }) => {
           {history[0] == "/" ? <CopyLinkButton /> : ""}
 
           {history[0] == "/" ? (
-            <button
-              className={styles.button}
+            <Button
               onClick={() => {
                 setDownloadedOnce(false);
                 setDownloading(true);
               }}
-            >
-              Download as Image
-            </button>
+              text="Download as Image"
+            />
           ) : (
             ""
           )}
 
-          <button onClick={() => router.push("/")} className={styles.button}>
-            &larr; Create a wish
-          </button>
+          <Button
+            onClick={() => router.push("/")}
+            text="&larr; Create a wish"
+          />
         </div>
       </main>
     </div>

@@ -1,0 +1,31 @@
+.button {
+  height: 45px;
+  padding: 0 27px;
+  width: max-content;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 5px 10px -3px var(--color);
+  background-color: var(--color);
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+  box-shadow: 0px 3px 12px var(--color);
+}
+
+/* If a screen is 350px or less wide, the button is in the middle*/
+@media screen and (max-width: 350px) {
+  .button {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
