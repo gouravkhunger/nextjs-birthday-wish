@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Router from "next/router";
 import useTheme from "../hooks/useTheme";
 import { useState } from "react";
+import { Button } from "../components";
 
 export default function Home() {
   const { themes, setTheme, currentTheme } = useTheme();
@@ -65,9 +66,7 @@ export default function Home() {
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />
-            <button className={styles.button} type="submit">
-              Go!
-            </button>
+            <Button className={styles.button} type="submit" text="Go!" />
           </form>
           <p className={styles.desc}>
             Crafted by{" "}
