@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import style from "../styles/CopyLinkButton.module.css";
+import { Button } from "./Button";
 
-const CopyLinkButton = () => {
+export const CopyLinkButton = () => {
   const [active, setActive] = useState(false);
   const [timer, setTimer] = useState(2);
 
@@ -29,13 +30,10 @@ const CopyLinkButton = () => {
   };
 
   return (
-    <button
-      className={`${style.button} ${active ? style.active : style.inactive}`}
+    <Button
+      text={active ? "Link copied!" : "Copy Link"}
       onClick={handleClick}
-    >
-      {active ? "Link copied!" : "Copy Link"}
-    </button>
+      className={active ? style.active : style.inactive}
+    />
   );
 };
-
-export default CopyLinkButton;
