@@ -3,23 +3,28 @@ import styles from "../styles/Home.module.css";
 import Router from "next/router";
 import useTheme from "../hooks/useTheme";
 import { useState } from "react";
-import { Button } from "../components";
+import { ErrorPopUp, Button } from "../components";
 
 export default function Home() {
   const { themes, setTheme, currentTheme } = useTheme();
   const [value, setValue] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleInput = (e) => {
     e.preventDefault();
     const id = currentTheme.id;
 
     if (!value || value[0] === " ") {
-      alert("Please enter a name!");
+      toggleErrorPopup();
       return;
     }
     if (id == 0) Router.push(value);
     // If the theme is default blue then push to '/{name}'
     else Router.push(`/${value}/${id}`); // If the theme is not default then will push to '/{name}?color={id}
+  };
+
+  const toggleErrorPopup = () => {
+    setIsError(!isError);
   };
 
   return (
@@ -30,6 +35,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <ErrorPopUp hidden={!isError} toggleErrorPopup={toggleErrorPopup} />
       <main>
         <div className={styles.main}>
           <h1 className={styles.title}>

@@ -70,6 +70,8 @@
   cursor: pointer;
 }
 
-.button {
-  margin-right: 8px;
+@media (min-width: 350px) {
+  .button {
+    margin-right: 8px;
+  }
 }
