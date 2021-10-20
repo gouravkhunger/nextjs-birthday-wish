@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import styles from "../styles/Name.module.css";
 import { useRouter } from "next/router";
@@ -15,6 +15,7 @@ const Wish = ({ history }) => {
   const color = name ? name[1] : 0; //extracting colorId from name
   const [downloading, setDownloading] = useState(false);
   const [downloadedOnce, setDownloadedOnce] = useState(false);
+  const audioRef = useRef();
 
   const { setTheme } = useTheme();
 
@@ -31,6 +32,8 @@ const Wish = ({ history }) => {
       const confetti = new ConfettiGenerator(confettiSettings);
       confetti.render();
     }
+    // play music bg
+    audioRef.current.play();
   }, [color, downloading]);
 
   useEffect(() => {
@@ -160,6 +163,9 @@ const Wish = ({ history }) => {
           />
         </div>
       </main>
+      <audio ref={audioRef} id="player" autoplay loop>
+        <source src="media/hbd.mp4" />
+      </audio>
     </div>
   );
 };

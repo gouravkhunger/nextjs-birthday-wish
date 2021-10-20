@@ -64,7 +64,7 @@ Without their contributions, this project wouldn't be as good as it is right now
     Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=adarshzpatel): Multicolour theme.
 
 - [@Sejal-16](https://github.com/Sejal-16) <br />
-    Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=Sejal-16): Birthday quotes idea.
+    Major [contribution](https://github.com/gouravkhunger/nextjs-birthday-wish/commits?author=Sejal-16): Birthday quotes idea, background music.
 
 Checkout [all the contributors](https://github.com/gouravkhunger/nextjs-birthday-wish/graphs/contributors).
 
