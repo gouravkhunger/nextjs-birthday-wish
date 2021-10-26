@@ -38,7 +38,7 @@ a {
 
 input[type="radio"] {
   appearance: none;
-  width: 0;
+  width: 15px;
   margin: 0;
 }
 
@@ -49,7 +49,6 @@ input[type="radio"]:after {
 
   content: "";
   display: inline-block;
-  visibility: visible;
   transition: 0.1s;
   opacity: 80%;
 }
