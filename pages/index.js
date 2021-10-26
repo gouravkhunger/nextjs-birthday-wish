@@ -37,6 +37,7 @@ export default function Home() {
           </h1>
         </div>
         {/* Theme Color  */}
+
         <div className={styles.themeWrapper}>
           <form
             className={styles.theme}
@@ -56,6 +57,7 @@ export default function Home() {
             ))}
           </form>
         </div>
+
         <div>
           <form className={styles.form} onSubmit={handleInput}>
             <input
