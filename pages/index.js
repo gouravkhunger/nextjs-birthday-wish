@@ -52,7 +52,7 @@ export default function Home() {
                 id={item.id}
                 name="theme"
                 value={item.color}
-                checked={currentTheme.id === item.id}
+                defaultChecked={currentTheme.id === item.id}
               />
             ))}
           </form>
