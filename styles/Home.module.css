@@ -54,16 +54,19 @@
 }
 
 .themeWrapper {
+  padding-bottom: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
   position: relative;
-  padding-bottom: 3rem;
 }
 
 .theme {
   position: absolute;
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-  justify-content: center;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  justify-items: center;
 }
 
 .theme input {
