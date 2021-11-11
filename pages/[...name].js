@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import styles from "../styles/Name.module.css";
 import { useRouter } from "next/router";
@@ -15,6 +15,7 @@ const Wish = ({ history }) => {
   const color = name ? name[1] : 0; //extracting colorId from name
   const [downloading, setDownloading] = useState(false);
   const [downloadedOnce, setDownloadedOnce] = useState(false);
+  const audioRef = useRef();
 
   const { setTheme } = useTheme();
 
@@ -30,6 +31,15 @@ const Wish = ({ history }) => {
       };
       const confetti = new ConfettiGenerator(confettiSettings);
       confetti.render();
+    }
+
+    // Regex to detect if browser is safari
+    // https://stackoverflow.com/a/50233812/9819031
+    var isSafari = /.*Version.*Safari.*/.test(navigator.userAgent)
+    if(!isSafari) {
+      // play music bg if browser isn't safari
+      // prevents autoplay errors on safari
+      audioRef.current.play();
     }
   }, [color, downloading]);
 
@@ -160,6 +170,9 @@ const Wish = ({ history }) => {
           />
         </div>
       </main>
+      <audio ref={audioRef} id="player">
+        <source src="media/hbd.mp3" />
+      </audio>
     </div>
   );
 };
