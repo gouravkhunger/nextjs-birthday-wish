@@ -33,14 +33,7 @@ const Wish = ({ history }) => {
       confetti.render();
     }
 
-    // Regex to detect if browser is safari
-    // https://stackoverflow.com/a/50233812/9819031
-    var isSafari = /.*Version.*Safari.*/.test(navigator.userAgent)
-    if(!isSafari) {
-      // play music bg if browser isn't safari
-      // prevents autoplay errors on safari
-      audioRef.current.play();
-    }
+    audioRef.current.play();
   }, [color, downloading]);
 
   useEffect(() => {
