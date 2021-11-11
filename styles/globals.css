@@ -38,18 +38,17 @@ a {
 
 input[type="radio"] {
   appearance: none;
+  width: 15px;
+  margin: 0;
 }
 
 input[type="radio"]:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  top: -2px;
-  left: -1px;
-  position: relative;
+
   content: "";
   display: inline-block;
-  visibility: visible;
   transition: 0.1s;
   opacity: 80%;
 }
@@ -83,8 +82,8 @@ input[type="radio"]:checked:after {
   width: 15px;
   height: 15px;
   border-radius: 100%;
-  top: -4.5px;
-  left: -3.5px;
+  top: -4px;
+  left: -2px;
   position: relative;
   background-color: var(--color);
   content: "";
@@ -97,25 +96,25 @@ input[type="radio"]:checked:after {
 
 input[type="radio"].blue:checked:after {
   background-color: var(--blue);
-  outline: 2px solid var(--blue);
+  box-shadow: 0 0 0 2px var(--blue);
 }
 
 input[type="radio"].green:checked:after {
   background-color: var(--green);
-  outline: 2px solid var(--green);
+  box-shadow: 0 0 0 2px var(--green);
 }
 
 input[type="radio"].violet:checked:after {
   background-color: var(--violet);
-  outline: 2px solid var(--violet);
+  box-shadow: 0 0 0 2px var(--violet);
 }
 
 input[type="radio"].yellow:checked:after {
   background-color: var(--yellow);
-  outline: 2px solid var(--yellow);
+  box-shadow: 0 0 0 2px var(--yellow);
 }
 
 input[type="radio"].red:checked:after {
   background-color: var(--red);
-  outline: 2px solid var(--red);
+  box-shadow: 0 0 0 2px var(--red);
 }
