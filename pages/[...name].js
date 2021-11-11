@@ -32,8 +32,15 @@ const Wish = ({ history }) => {
       const confetti = new ConfettiGenerator(confettiSettings);
       confetti.render();
     }
-    // play music bg
-    audioRef.current.play();
+
+    // Regex to detect if browser is safari
+    // https://stackoverflow.com/a/50233812/9819031
+    var isSafari = /.*Version.*Safari.*/.test(navigator.userAgent)
+    if(!isSafari) {
+      // play music bg if browser isn't safari
+      // prevents autoplay errors on safari
+      audioRef.current.play();
+    }
   }, [color, downloading]);
 
   useEffect(() => {
@@ -163,8 +170,8 @@ const Wish = ({ history }) => {
           />
         </div>
       </main>
-      <audio ref={audioRef} id="player" autoPlay loop>
-        <source src="media/hbd.mp4" />
+      <audio ref={audioRef} id="player">
+        <source src="media/hbd.mp3" />
       </audio>
     </div>
   );
