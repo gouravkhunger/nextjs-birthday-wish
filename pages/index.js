@@ -26,7 +26,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Create a Birthday Wish</title>
-        <meta name="description" content="A simple app to create a generate a birthday wish!" />
+        <meta name="description" content="A simple app to generate a birthday wish!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
