@@ -129,7 +129,7 @@ const Wish = ({ history }) => {
 				<title>Happy Birthday {name && name[0]}</title>
 				<meta
 					name="description"
-					content={`Birthday wish for ${name && name[0]}`}
+					content={`A surprise birthday wish!`}
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
